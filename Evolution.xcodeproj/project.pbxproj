@@ -109,6 +109,9 @@
 		B9D84C2315E9133D000B53E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84B2815E9133C000B53E5 /* main.m */; };
 		B9D84C2A15E9167B000B53E5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84C2915E9167B000B53E5 /* GameLayer.m */; };
 		B9D84C2D15E91742000B53E5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84C2C15E91742000B53E5 /* RootViewController.m */; };
+		B9D84C3615E925EA000B53E5 /* fish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D84C3515E925EA000B53E5 /* fish@2x.png */; };
+		B9D84C3815E92664000B53E5 /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D84C3715E92664000B53E5 /* fish.png */; };
+		B9D84C3B15E92D2D000B53E5 /* Fish.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84C3A15E92D2C000B53E5 /* Fish.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -324,6 +327,10 @@
 		B9D84C2B15E91742000B53E5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		B9D84C2C15E91742000B53E5 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		B9D84C2E15E918D1000B53E5 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		B9D84C3515E925EA000B53E5 /* fish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fish@2x.png"; sourceTree = "<group>"; };
+		B9D84C3715E92664000B53E5 /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish.png; sourceTree = "<group>"; };
+		B9D84C3915E92D2C000B53E5 /* Fish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fish.h; sourceTree = "<group>"; };
+		B9D84C3A15E92D2C000B53E5 /* Fish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fish.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +386,7 @@
 				B9D8492615E9133C000B53E5 /* cocos2d */,
 				B9D849CF15E9133C000B53E5 /* cocoslive */,
 				B9D849DA15E9133C000B53E5 /* external */,
+				B9D84C3415E925EA000B53E5 /* images */,
 				B9D849D615E9133C000B53E5 /* InfoPlist.strings */,
 				B9D849D815E9133C000B53E5 /* Evolution-Info.plist */,
 				B9D849D915E9133C000B53E5 /* Evolution-Prefix.pch */,
@@ -390,6 +398,8 @@
 				B9D84C2E15E918D1000B53E5 /* GameConfig.h */,
 				B9D84C2B15E91742000B53E5 /* RootViewController.h */,
 				B9D84C2C15E91742000B53E5 /* RootViewController.m */,
+				B9D84C3915E92D2C000B53E5 /* Fish.h */,
+				B9D84C3A15E92D2C000B53E5 /* Fish.m */,
 			);
 			path = Evolution;
 			sourceTree = "<group>";
@@ -673,6 +683,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		B9D84C3415E925EA000B53E5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B9D84C3715E92664000B53E5 /* fish.png */,
+				B9D84C3515E925EA000B53E5 /* fish@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -725,6 +744,8 @@
 			files = (
 				B9D84B7915E9133C000B53E5 /* InfoPlist.strings in Resources */,
 				B9D84B7A15E9133C000B53E5 /* Evolution-Info.plist in Resources */,
+				B9D84C3615E925EA000B53E5 /* fish@2x.png in Resources */,
+				B9D84C3815E92664000B53E5 /* fish.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +850,7 @@
 				B9D84C2315E9133D000B53E5 /* main.m in Sources */,
 				B9D84C2A15E9167B000B53E5 /* GameLayer.m in Sources */,
 				B9D84C2D15E91742000B53E5 /* RootViewController.m in Sources */,
+				B9D84C3B15E92D2D000B53E5 /* Fish.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
