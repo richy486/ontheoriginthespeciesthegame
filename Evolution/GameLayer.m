@@ -8,6 +8,7 @@
 
 #import "GameLayer.h"
 #import "Fish.h"
+#import "Man.h"
 
 @interface GameLayer()
 @property (nonatomic, retain) NSMutableArray *fishes;
@@ -48,7 +49,7 @@ CGFloat WIDTH, HEIGHT;
         [self addChild:layerColour];
         
         CCLabelTTF *title = [CCLabelTTF labelWithString:@"Evolution" fontName:@"Helvetica" fontSize:17];
-		title.position = ccp(winSize.width /2 , winSize.height - 70.0);
+		title.position = ccp(WIDTH /2 , HEIGHT - 70.0);
         title.color = (ccColor3B){255, 255, 255};
 		[self addChild: title];
         
@@ -59,6 +60,9 @@ CGFloat WIDTH, HEIGHT;
             [self makeAFish];
         }
         
+        Man *man = [Man node];
+        man.position = ccp(WIDTH / 2 , HEIGHT / 2);
+        [self addChild:man];
     }
     return self;
 }

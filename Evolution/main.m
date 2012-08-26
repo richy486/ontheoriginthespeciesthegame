@@ -13,7 +13,14 @@
 int main(int argc, char *argv[]) 
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
+    int retVal = -1;
+    @try {
+        retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
+    }
+    @catch (NSException* exception) {
+        NSLog(@"Uncaught exception: %@", exception.description);
+        NSLog(@"Stack trace: %@", [exception callStackSymbols]);
+    }
     [pool release];
     return retVal;
 }
