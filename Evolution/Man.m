@@ -116,7 +116,7 @@
     
     CCDelayTime *delayAction = [CCDelayTime actionWithDuration:2.0];
     
-    [self runAction:[CCSequence actions:bezierAction, bezierAction, runOff, delayAction, setupFunct, nil]];
+    [self runAction:[CCSequence actions:bezierAction, runOff, delayAction, setupFunct, nil]];
 }
 
 - (void) dealloc

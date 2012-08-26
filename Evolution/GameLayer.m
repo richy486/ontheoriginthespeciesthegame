@@ -10,6 +10,7 @@
 #import "GameConfig.h"
 #import "Fish.h"
 #import "Man.h"
+#import "Water.h"
 
 @interface GameLayer()
 @property (nonatomic, retain) NSMutableArray *fishes;
@@ -47,7 +48,7 @@
         
         [self schedule:@selector(update:)];
         
-        CCLayerColor *layerColour = [CCLayerColor layerWithColor:ccc4(0, 96, 128, 255)];
+        CCLayerColor *layerColour = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255)];
         [self addChild:layerColour];
         
         CCLabelTTF *title = [CCLabelTTF labelWithString:@"Evolution" fontName:@"Helvetica" fontSize:24];
@@ -71,7 +72,8 @@
             [self makeAMan];
         }
         
-        
+        Water *water = [Water node];
+        [self addChild:water];
     }
     return self;
 }
@@ -175,10 +177,10 @@ Fish *selectedFish;
 {
     for (Man *man in self.men)
     {
-        CGRect manBB = CGRectMake(man.boundingBox.origin.x
-                                  , man.boundingBox.origin.y
+        CGRect manBB = CGRectMake(man.position.x - 50
+                                  , man.position.y
                                   , 100
-                                  , 100);
+                                  , 50);
         if(CGRectIntersectsRect(manBB, [fish boundingBox]))
         {
             [man addedHead];

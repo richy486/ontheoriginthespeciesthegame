@@ -12,6 +12,9 @@
 		B90A01F315E9A2910015B652 /* man-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F115E9A2910015B652 /* man-hd.png */; };
 		B90A01F615E9A3940015B652 /* man.plist in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F415E9A3930015B652 /* man.plist */; };
 		B90A01F715E9A3940015B652 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F515E9A3940015B652 /* man.png */; };
+		B9252C0615E9CBCF00F6739F /* Water.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252C0515E9CBCF00F6739F /* Water.m */; };
+		B9252C0915E9CC2300F6739F /* water-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0715E9CC2300F6739F /* water-hd.png */; };
+		B9252C0A15E9CC2300F6739F /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0815E9CC2300F6739F /* water.png */; };
 		B9C652E5143E8FF1005F4D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E4143E8FF1005F4D1E /* UIKit.framework */; };
 		B9C652E7143E8FF1005F4D1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E6143E8FF1005F4D1E /* Foundation.framework */; };
 		B9C652E9143E8FF1005F4D1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E8143E8FF1005F4D1E /* CoreGraphics.framework */; };
@@ -126,6 +129,10 @@
 		B90A01F115E9A2910015B652 /* man-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-hd.png"; sourceTree = "<group>"; };
 		B90A01F415E9A3930015B652 /* man.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = man.plist; sourceTree = "<group>"; };
 		B90A01F515E9A3940015B652 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		B9252C0415E9CBCE00F6739F /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		B9252C0515E9CBCF00F6739F /* Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Water.m; sourceTree = "<group>"; };
+		B9252C0715E9CC2300F6739F /* water-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water-hd.png"; sourceTree = "<group>"; };
+		B9252C0815E9CC2300F6739F /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 		B9C652E0143E8FF1005F4D1E /* Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C652E4143E8FF1005F4D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9C652E6143E8FF1005F4D1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -413,6 +420,8 @@
 				B9D84C3A15E92D2C000B53E5 /* Fish.m */,
 				B90A01E815E9A1D40015B652 /* Man.h */,
 				B90A01E915E9A1D40015B652 /* Man.m */,
+				B9252C0415E9CBCE00F6739F /* Water.h */,
+				B9252C0515E9CBCF00F6739F /* Water.m */,
 			);
 			path = Evolution;
 			sourceTree = "<group>";
@@ -705,6 +714,8 @@
 				B90A01F515E9A3940015B652 /* man.png */,
 				B90A01F015E9A2910015B652 /* man-hd.plist */,
 				B90A01F115E9A2910015B652 /* man-hd.png */,
+				B9252C0715E9CC2300F6739F /* water-hd.png */,
+				B9252C0815E9CC2300F6739F /* water.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -767,6 +778,8 @@
 				B90A01F315E9A2910015B652 /* man-hd.png in Resources */,
 				B90A01F615E9A3940015B652 /* man.plist in Resources */,
 				B90A01F715E9A3940015B652 /* man.png in Resources */,
+				B9252C0915E9CC2300F6739F /* water-hd.png in Resources */,
+				B9252C0A15E9CC2300F6739F /* water.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +886,7 @@
 				B9D84C2D15E91742000B53E5 /* RootViewController.m in Sources */,
 				B9D84C3B15E92D2D000B53E5 /* Fish.m in Sources */,
 				B90A01EA15E9A1D40015B652 /* Man.m in Sources */,
+				B9252C0615E9CBCF00F6739F /* Water.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
