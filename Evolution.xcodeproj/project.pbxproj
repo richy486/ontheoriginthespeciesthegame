@@ -20,6 +20,10 @@
 		B9252C1315EA378600F6739F /* explode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0F15EA378600F6739F /* explode-hd.png */; };
 		B9252C1415EA378600F6739F /* explode.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1015EA378600F6739F /* explode.plist */; };
 		B9252C1515EA378600F6739F /* explode.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1115EA378600F6739F /* explode.png */; };
+		B9252C1715EA3EB600F6739F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1615EA3EB600F6739F /* Default@2x.png */; };
+		B9252C1915EA3EC800F6739F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1815EA3EC800F6739F /* Default.png */; };
+		B9252C1B15EA3ED800F6739F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1A15EA3ED800F6739F /* Icon@2x.png */; };
+		B9252C1D15EA3EDE00F6739F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1C15EA3EDD00F6739F /* Icon.png */; };
 		B9C652E5143E8FF1005F4D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E4143E8FF1005F4D1E /* UIKit.framework */; };
 		B9C652E7143E8FF1005F4D1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E6143E8FF1005F4D1E /* Foundation.framework */; };
 		B9C652E9143E8FF1005F4D1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E8143E8FF1005F4D1E /* CoreGraphics.framework */; };
@@ -144,6 +148,10 @@
 		B9252C0F15EA378600F6739F /* explode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explode-hd.png"; sourceTree = "<group>"; };
 		B9252C1015EA378600F6739F /* explode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explode.plist; sourceTree = "<group>"; };
 		B9252C1115EA378600F6739F /* explode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explode.png; sourceTree = "<group>"; };
+		B9252C1615EA3EB600F6739F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B9252C1815EA3EC800F6739F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B9252C1A15EA3ED800F6739F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		B9252C1C15EA3EDD00F6739F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B9C652E0143E8FF1005F4D1E /* Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C652E4143E8FF1005F4D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9C652E6143E8FF1005F4D1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -382,6 +390,10 @@
 		B9C652D5143E8FF1005F4D1E = {
 			isa = PBXGroup;
 			children = (
+				B9252C1C15EA3EDD00F6739F /* Icon.png */,
+				B9252C1A15EA3ED800F6739F /* Icon@2x.png */,
+				B9252C1815EA3EC800F6739F /* Default.png */,
+				B9252C1615EA3EB600F6739F /* Default@2x.png */,
 				B9C65666143EEA7B005F4D1E /* libz.dylib */,
 				B9C6544B143EDDB3005F4D1E /* OpenGLES.framework */,
 				B9C6544C143EDDB3005F4D1E /* QuartzCore.framework */,
@@ -801,6 +813,10 @@
 				B9252C1315EA378600F6739F /* explode-hd.png in Resources */,
 				B9252C1415EA378600F6739F /* explode.plist in Resources */,
 				B9252C1515EA378600F6739F /* explode.png in Resources */,
+				B9252C1715EA3EB600F6739F /* Default@2x.png in Resources */,
+				B9252C1915EA3EC800F6739F /* Default.png in Resources */,
+				B9252C1B15EA3ED800F6739F /* Icon@2x.png in Resources */,
+				B9252C1D15EA3EDE00F6739F /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,6 +998,7 @@
 				INFOPLIST_FILE = "Evolution/Evolution-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Evolution;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -995,6 +1012,7 @@
 				INFOPLIST_FILE = "Evolution/Evolution-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Evolution;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
