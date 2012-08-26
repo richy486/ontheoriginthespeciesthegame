@@ -21,16 +21,18 @@
 
 
 
-- (void) fireFish
+- (void) fireFish:(float) power
 {
     self.fresh = NO;
     
     float animationTime = 1.0;
     
+    float amount = power * 300;
+    
     ccBezierConfig bezier;
-    bezier.controlPoint_1 = ccp(self.position.x, self.position.y + 250);
-    bezier.controlPoint_2 = ccp(self.position.x + animationTime * self.speed, self.position.y + 250);
-    bezier.endPosition = ccp(self.position.x + animationTime * self.speed, self.position.y + 200);
+    bezier.controlPoint_1 = ccp(self.position.x, self.position.y + amount);
+    bezier.controlPoint_2 = ccp(self.position.x + animationTime * self.speed, self.position.y + amount);
+    bezier.endPosition = ccp(self.position.x + animationTime * self.speed, self.position.y + amount - 50);
     CCBezierTo *bezierAction = [CCBezierTo actionWithDuration:animationTime bezier:bezier];
     
     CCCallFunc *landFunct = [CCCallFunc actionWithTarget:self selector:@selector(land)];

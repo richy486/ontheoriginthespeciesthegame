@@ -22,5 +22,5 @@
 @property BOOL fresh;
 
 - (void) setUp;
-- (void) fireFish;
+- (void) fireFish:(float) power;
 @end

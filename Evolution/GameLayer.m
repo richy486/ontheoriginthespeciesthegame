@@ -130,8 +130,10 @@
 
 CGPoint startSwipePosition;
 Fish *selectedFish;
+NSDate *touchDownDate;
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    touchDownDate = [[NSDate date] retain];
     UITouch* touch = [touches anyObject];
     startSwipePosition = [touch locationInView: [touch view]];
     startSwipePosition = [[CCDirector sharedDirector] convertToGL:startSwipePosition]; 
@@ -157,10 +159,17 @@ Fish *selectedFish;
 //    UITouch* touch = [touches anyObject];
 //    CGPoint endSwipePosition = [touch locationInView: [touch view]];
     
+    float touchTime = [[NSDate date] timeIntervalSinceDate:touchDownDate];
+    NSLog(@"touchTime: %.02f", touchTime);
+    
+    float power = MAX(MIN(touchTime * 10, 1.0), 0.2);
+    
     if (selectedFish)
     {
-        [selectedFish fireFish];
+        [selectedFish fireFish:power];
     }
+    
+    [touchDownDate release];
 }
 
 
