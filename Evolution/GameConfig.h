@@ -41,5 +41,7 @@
 #error(unknown architecture)
 #endif
 
+CGFloat WIDTH, HEIGHT;
+
 #endif // __GAME_CONFIG_H
 

@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSMutableArray *men;
 @end
 
-CGFloat WIDTH, HEIGHT;
+
 
 @implementation GameLayer
 
@@ -42,6 +42,7 @@ CGFloat WIDTH, HEIGHT;
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         WIDTH = winSize.width;
         HEIGHT = winSize.height;
+        self.isTouchEnabled = YES;
         
         [self schedule:@selector(update:)];
         
@@ -78,14 +79,17 @@ CGFloat WIDTH, HEIGHT;
 {
     for (Fish *f in self.fishes)
     {
-        CGFloat addTo = deltaTime * f.speed;
-        if (f.position.x + addTo >= WIDTH + f.textureRect.size.width)
+        if (f.fresh)
         {
-            [f setPosition:ccp(- f.textureRect.size.width + addTo, f.position.y)];
-        }
-        else
-        {
-            [f setPosition:ccp(f.position.x + addTo, f.position.y)];
+            CGFloat addTo = deltaTime * f.speed;
+            if (f.position.x + addTo >= WIDTH + f.textureRect.size.width)
+            {
+                [f setPosition:ccp(- f.textureRect.size.width + addTo, f.position.y)];
+            }
+            else
+            {
+                [f setPosition:ccp(f.position.x + addTo, f.position.y)];
+            }
         }
     }
     
@@ -103,6 +107,40 @@ CGFloat WIDTH, HEIGHT;
     }
 }
 
+CGPoint startSwipePosition;
+Fish *selectedFish;
+- (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch* touch = [touches anyObject];
+    startSwipePosition = [touch locationInView: [touch view]];
+    startSwipePosition = [[CCDirector sharedDirector] convertToGL:startSwipePosition]; 
+    selectedFish = nil;
+    for (Fish *fish in self.fishes)
+    {
+        if (CGRectContainsPoint([fish boundingBox], startSwipePosition))
+        {
+            //[fish setVisible:NO];
+            selectedFish = fish;
+        }
+
+    }
+}
+
+- (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+}
+
+- (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+//    UITouch* touch = [touches anyObject];
+//    CGPoint endSwipePosition = [touch locationInView: [touch view]];
+    
+    if (selectedFish)
+    {
+        [selectedFish fireFish];
+    }
+}
 
 
 - (void) makeAFish
@@ -110,9 +148,7 @@ CGFloat WIDTH, HEIGHT;
     Fish *f = [Fish spriteWithFile:@"fish.png"];
 
     [f setScale:0.5];
-    [f setPosition:ccp((arc4random()%(int)WIDTH) - WIDTH
-                          , arc4random()%(int)(HEIGHT * 0.35))];
-    f.speed = 100 + ((float)(arc4random()%100));
+    [f setUp];
     [self addChild:f];
     
     [self.fishes addObject:f];
