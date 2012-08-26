@@ -28,9 +28,9 @@
     float animationTime = 1.0;
     
     ccBezierConfig bezier;
-    bezier.controlPoint_1 = ccp(self.position.x, self.position.y + 300);
-    bezier.controlPoint_2 = ccp(self.position.x + animationTime * self.speed, self.position.y + 300);
-    bezier.endPosition = ccp(self.position.x + animationTime * self.speed, self.position.y + 150);
+    bezier.controlPoint_1 = ccp(self.position.x, self.position.y + 250);
+    bezier.controlPoint_2 = ccp(self.position.x + animationTime * self.speed, self.position.y + 250);
+    bezier.endPosition = ccp(self.position.x + animationTime * self.speed, self.position.y + 200);
     CCBezierTo *bezierAction = [CCBezierTo actionWithDuration:animationTime bezier:bezier];
     
     CCCallFunc *landFunct = [CCCallFunc actionWithTarget:self selector:@selector(land)];

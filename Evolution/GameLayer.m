@@ -184,6 +184,26 @@ Fish *selectedFish;
     [self.men addObject:man];
 }
 
+- (void) playBigText:(NSString*) text
+{
+    __block CCLabelTTF *title = [CCLabelTTF labelWithString:text fontName:@"Helvetica-Bold" fontSize:70];
+    title.position = ccp(WIDTH /2 , HEIGHT / 2);
+    title.color = (ccColor3B){246, 137, 48};
+    [self addChild: title];
+    
+    [title setScale:0.25];
+    
+    CCScaleTo *scaleUp = [CCScaleTo actionWithDuration:0.5 scale:1.0];
+    CCScaleTo *scaleDown = [CCScaleTo actionWithDuration:0.2 scale:0.8];
+    
+    CCCallBlock *actionRemoveSelf = [CCCallBlock actionWithBlock:^{
+        [title removeFromParentAndCleanup:YES];
+    }];
+    
+    [title runAction:[CCSequence actions:scaleUp, scaleDown, actionRemoveSelf, nil]];
+    
+}
+
 #pragma mark - fish delegate
 
 - (void) fishDidLand:(Fish *)fish
@@ -197,6 +217,7 @@ Fish *selectedFish;
         if(CGRectIntersectsRect(manBB, [fish boundingBox]))
         {
             [man addedHead];
+            [self playBigText:@"+EVOLUTION!"];
             [self.score addToEveloutions];
             break;
         }

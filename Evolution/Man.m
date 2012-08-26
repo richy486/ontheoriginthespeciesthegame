@@ -104,11 +104,15 @@
     
     float animationTime = 0.5;
     
-    ccBezierConfig bezier;
-    bezier.controlPoint_1 = ccp(self.position.x, self.position.y + 100);
-    bezier.controlPoint_2 = ccp(self.position.x + 100, self.position.y + 100);
-    bezier.endPosition = ccp(self.position.x + 100, self.position.y);
-    CCBezierTo *bezierAction = [CCBezierTo actionWithDuration:animationTime bezier:bezier];
+    
+//    ccBezierConfig bezier;
+//    bezier.controlPoint_1 = ccp(self.position.x, self.position.y + 100);
+//    bezier.controlPoint_2 = ccp(self.position.x + 100, self.position.y + 100);
+//    bezier.endPosition = ccp(self.position.x + 100, self.position.y);
+//    CCBezierTo *bezierAction = [CCBezierTo actionWithDuration:animationTime bezier:bezier];
+    
+    CCMoveBy *moveUp = [CCMoveBy actionWithDuration:animationTime/4 position:ccp(0, 40)];
+    CCMoveBy *moveDown = [CCMoveBy actionWithDuration:animationTime/2 position:ccp(0, -40)];
     
     CCMoveTo *runOff = [CCMoveTo actionWithDuration:animationTime position:ccp(self.position.x + WIDTH, self.position.y)];
     
@@ -116,7 +120,15 @@
     
     CCDelayTime *delayAction = [CCDelayTime actionWithDuration:2.0];
     
-    [self runAction:[CCSequence actions:bezierAction, runOff, delayAction, setupFunct, nil]];
+    [self runAction:[CCSequence actions:
+                     moveUp
+                     , moveDown
+                     , moveUp
+                     , moveDown
+                     , runOff
+                     , delayAction
+                     , setupFunct
+                     , nil]];
 }
 
 - (void) dealloc
