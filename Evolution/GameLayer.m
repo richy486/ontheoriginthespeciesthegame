@@ -11,13 +11,13 @@
 #import "Fish.h"
 #import "Man.h"
 #import "Water.h"
+#import "Score.h"
 
 @interface GameLayer()
 @property (nonatomic, retain) NSMutableArray *fishes;
 @property (nonatomic, retain) NSMutableArray *men;
+@property (nonatomic, retain) Score *score;
 @end
-
-
 
 @implementation GameLayer
 
@@ -51,9 +51,9 @@
         CCLayerColor *layerColour = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255)];
         [self addChild:layerColour];
         
-        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Evolution" fontName:@"Helvetica" fontSize:24];
+        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Origin of the Species The Game " fontName:@"Helvetica" fontSize:24];
 		title.position = ccp(WIDTH /2 , HEIGHT - 70.0);
-        title.color = (ccColor3B){255, 255, 255};
+        title.color = (ccColor3B){64, 64, 64};
 		[self addChild: title];
         
         [title runAction:[CCMoveTo actionWithDuration:2.0 position:ccp(WIDTH /2 , HEIGHT + 70.0)]];
@@ -74,6 +74,10 @@
         
         Water *water = [Water node];
         [self addChild:water];
+        
+        self.score = [Score node];
+        self.score.position = ccp(WIDTH /2 , HEIGHT - 20.0);
+        [self addChild:self.score];
     }
     return self;
 }
@@ -184,6 +188,7 @@ Fish *selectedFish;
         if(CGRectIntersectsRect(manBB, [fish boundingBox]))
         {
             [man addedHead];
+            [self.score addToEveloutions];
             break;
         }
     }
@@ -196,6 +201,7 @@ Fish *selectedFish;
 - (void) dealloc
 {
     [_fishes release];
+    [_score release];
     [super dealloc];
 }
 
