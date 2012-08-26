@@ -9,5 +9,5 @@
 #import "cocos2d.h"
 
 @interface Man : CCNode
-
+@property CGFloat speed;
 @end

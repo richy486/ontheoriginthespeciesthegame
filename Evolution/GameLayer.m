@@ -12,7 +12,7 @@
 
 @interface GameLayer()
 @property (nonatomic, retain) NSMutableArray *fishes;
-
+@property (nonatomic, retain) NSMutableArray *men;
 @end
 
 CGFloat WIDTH, HEIGHT;
@@ -48,21 +48,28 @@ CGFloat WIDTH, HEIGHT;
         CCLayerColor *layerColour = [CCLayerColor layerWithColor:ccc4(0, 96, 128, 255)];
         [self addChild:layerColour];
         
-        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Evolution" fontName:@"Helvetica" fontSize:17];
+        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Evolution" fontName:@"Helvetica" fontSize:24];
 		title.position = ccp(WIDTH /2 , HEIGHT - 70.0);
         title.color = (ccColor3B){255, 255, 255};
 		[self addChild: title];
         
+        [title runAction:[CCMoveTo actionWithDuration:2.0 position:ccp(WIDTH /2 , HEIGHT + 70.0)]];
         
-        self.fishes = [NSMutableArray arrayWithCapacity:10];
-        for (int i = 0; i < 10; ++i)
+        const int fishCount = 10;
+        self.fishes = [NSMutableArray arrayWithCapacity:fishCount];
+        for (int i = 0; i < fishCount; ++i)
         {
             [self makeAFish];
         }
         
-        Man *man = [Man node];
-        man.position = ccp(WIDTH / 2 , HEIGHT / 2);
-        [self addChild:man];
+        const int menCount = 2;
+        self.men = [NSMutableArray arrayWithCapacity:menCount];
+        for (int i = 0; i < menCount; ++i)
+        {
+            [self makeAMan];
+        }
+        
+        
     }
     return self;
 }
@@ -81,18 +88,45 @@ CGFloat WIDTH, HEIGHT;
             [f setPosition:ccp(f.position.x + addTo, f.position.y)];
         }
     }
+    
+    for (Man *man in self.men)
+    {
+        CGFloat addTo = deltaTime * man.speed;
+        if (man.position.x + addTo >= WIDTH + 100)
+        {
+            [man setPosition:ccp(- 100 + addTo, man.position.y)];
+        }
+        else
+        {
+            [man setPosition:ccp(man.position.x + addTo, man.position.y)];
+        }
+    }
 }
+
+
 
 - (void) makeAFish
 {
     Fish *f = [Fish spriteWithFile:@"fish.png"];
 
+    [f setScale:0.5];
     [f setPosition:ccp((arc4random()%(int)WIDTH) - WIDTH
-                          , arc4random()%((int)HEIGHT / 2))];
+                          , arc4random()%(int)(HEIGHT * 0.35))];
     f.speed = 100 + ((float)(arc4random()%100));
     [self addChild:f];
     
     [self.fishes addObject:f];
+}
+
+- (void) makeAMan
+{
+    Man *man = [Man node];
+    [man setPosition:ccp((arc4random()%(int)WIDTH) - WIDTH
+                       , arc4random()%(int)(HEIGHT * 0.4) + (HEIGHT /2) )];
+    
+    man.speed = 100 + ((float)(arc4random()%100));
+    [self addChild:man];
+    [self.men addObject:man];
 }
 
 - (void) dealloc
