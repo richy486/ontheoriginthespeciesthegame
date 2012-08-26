@@ -10,4 +10,7 @@
 
 @interface Man : CCNode
 @property CGFloat speed;
+@property BOOL lost;
+- (void) setUp;
+- (void) addedHead;
 @end

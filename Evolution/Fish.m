@@ -7,6 +7,7 @@
 //
 
 #import "Fish.h"
+#import "GameConfig.h"
 
 @implementation Fish
 
@@ -18,6 +19,8 @@
     self.fresh = YES;
 }
 
+
+
 - (void) fireFish
 {
     self.fresh = NO;
@@ -27,11 +30,24 @@
     ccBezierConfig bezier;
     bezier.controlPoint_1 = ccp(self.position.x, self.position.y + 300);
     bezier.controlPoint_2 = ccp(self.position.x + animationTime * self.speed, self.position.y + 300);
-    bezier.endPosition = ccp(self.position.x + animationTime * self.speed, self.position.y + 50);
-    id bezierAction = [CCBezierTo actionWithDuration:animationTime bezier:bezier];
+    bezier.endPosition = ccp(self.position.x + animationTime * self.speed, self.position.y + 150);
+    CCBezierTo *bezierAction = [CCBezierTo actionWithDuration:animationTime bezier:bezier];
     
-    CCCallFunc *setupFunct = [CCCallFunc actionWithTarget:self selector:@selector(setUp)];
+    CCCallFunc *landFunct = [CCCallFunc actionWithTarget:self selector:@selector(land)];
     
-    [self runAction:[CCSequence actionOne:bezierAction two:setupFunct]];
+    [self runAction:[CCSequence actionOne:bezierAction
+                                      two:landFunct]];
+}
+
+- (void) land
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(fishDidLand:)])
+    {
+        [self.delegate fishDidLand:self];
+    }
+    else
+    {
+        [self setUp];
+    }
 }
 @end

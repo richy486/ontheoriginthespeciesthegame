@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B90A01EA15E9A1D40015B652 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = B90A01E915E9A1D40015B652 /* Man.m */; };
-		B90A01F215E9A2910015B652 /* man@2x.plist in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F015E9A2910015B652 /* man@2x.plist */; };
-		B90A01F315E9A2910015B652 /* man@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F115E9A2910015B652 /* man@2x.png */; };
+		B90A01F215E9A2910015B652 /* man-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F015E9A2910015B652 /* man-hd.plist */; };
+		B90A01F315E9A2910015B652 /* man-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F115E9A2910015B652 /* man-hd.png */; };
 		B90A01F615E9A3940015B652 /* man.plist in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F415E9A3930015B652 /* man.plist */; };
 		B90A01F715E9A3940015B652 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = B90A01F515E9A3940015B652 /* man.png */; };
 		B9C652E5143E8FF1005F4D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E4143E8FF1005F4D1E /* UIKit.framework */; };
@@ -114,7 +114,7 @@
 		B9D84C2315E9133D000B53E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84B2815E9133C000B53E5 /* main.m */; };
 		B9D84C2A15E9167B000B53E5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84C2915E9167B000B53E5 /* GameLayer.m */; };
 		B9D84C2D15E91742000B53E5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84C2C15E91742000B53E5 /* RootViewController.m */; };
-		B9D84C3615E925EA000B53E5 /* fish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D84C3515E925EA000B53E5 /* fish@2x.png */; };
+		B9D84C3615E925EA000B53E5 /* fish-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D84C3515E925EA000B53E5 /* fish-hd.png */; };
 		B9D84C3815E92664000B53E5 /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D84C3715E92664000B53E5 /* fish.png */; };
 		B9D84C3B15E92D2D000B53E5 /* Fish.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D84C3A15E92D2C000B53E5 /* Fish.m */; };
 /* End PBXBuildFile section */
@@ -122,8 +122,8 @@
 /* Begin PBXFileReference section */
 		B90A01E815E9A1D40015B652 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		B90A01E915E9A1D40015B652 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
-		B90A01F015E9A2910015B652 /* man@2x.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "man@2x.plist"; sourceTree = "<group>"; };
-		B90A01F115E9A2910015B652 /* man@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man@2x.png"; sourceTree = "<group>"; };
+		B90A01F015E9A2910015B652 /* man-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "man-hd.plist"; sourceTree = "<group>"; };
+		B90A01F115E9A2910015B652 /* man-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-hd.png"; sourceTree = "<group>"; };
 		B90A01F415E9A3930015B652 /* man.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = man.plist; sourceTree = "<group>"; };
 		B90A01F515E9A3940015B652 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		B9C652E0143E8FF1005F4D1E /* Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,7 +338,7 @@
 		B9D84C2B15E91742000B53E5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		B9D84C2C15E91742000B53E5 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		B9D84C2E15E918D1000B53E5 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		B9D84C3515E925EA000B53E5 /* fish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fish@2x.png"; sourceTree = "<group>"; };
+		B9D84C3515E925EA000B53E5 /* fish-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fish-hd.png"; sourceTree = "<group>"; };
 		B9D84C3715E92664000B53E5 /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish.png; sourceTree = "<group>"; };
 		B9D84C3915E92D2C000B53E5 /* Fish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fish.h; sourceTree = "<group>"; };
 		B9D84C3A15E92D2C000B53E5 /* Fish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fish.m; sourceTree = "<group>"; };
@@ -700,11 +700,11 @@
 			isa = PBXGroup;
 			children = (
 				B9D84C3715E92664000B53E5 /* fish.png */,
-				B9D84C3515E925EA000B53E5 /* fish@2x.png */,
+				B9D84C3515E925EA000B53E5 /* fish-hd.png */,
 				B90A01F415E9A3930015B652 /* man.plist */,
 				B90A01F515E9A3940015B652 /* man.png */,
-				B90A01F015E9A2910015B652 /* man@2x.plist */,
-				B90A01F115E9A2910015B652 /* man@2x.png */,
+				B90A01F015E9A2910015B652 /* man-hd.plist */,
+				B90A01F115E9A2910015B652 /* man-hd.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -761,10 +761,10 @@
 			files = (
 				B9D84B7915E9133C000B53E5 /* InfoPlist.strings in Resources */,
 				B9D84B7A15E9133C000B53E5 /* Evolution-Info.plist in Resources */,
-				B9D84C3615E925EA000B53E5 /* fish@2x.png in Resources */,
+				B9D84C3615E925EA000B53E5 /* fish-hd.png in Resources */,
 				B9D84C3815E92664000B53E5 /* fish.png in Resources */,
-				B90A01F215E9A2910015B652 /* man@2x.plist in Resources */,
-				B90A01F315E9A2910015B652 /* man@2x.png in Resources */,
+				B90A01F215E9A2910015B652 /* man-hd.plist in Resources */,
+				B90A01F315E9A2910015B652 /* man-hd.png in Resources */,
 				B90A01F615E9A3940015B652 /* man.plist in Resources */,
 				B90A01F715E9A3940015B652 /* man.png in Resources */,
 			);

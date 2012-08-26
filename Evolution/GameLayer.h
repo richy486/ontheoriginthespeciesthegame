@@ -7,8 +7,9 @@
 //
 
 #import "cocos2d.h"
+#import "Fish.h"
 
-@interface GameLayer : CCLayer
+@interface GameLayer : CCLayer <FishDelegate>
 
 +(CCScene *) scene;
 

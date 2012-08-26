@@ -7,9 +7,17 @@
 //
 
 #import "cocos2d.h"
-#import "GameConfig.h"
+
+
+@class Fish;
+@protocol FishDelegate <NSObject>
+
+- (void) fishDidLand:(Fish*) fish;
+
+@end
 
 @interface Fish : CCSprite
+@property (assign) id<FishDelegate> delegate;
 @property CGFloat speed;
 @property BOOL fresh;
 

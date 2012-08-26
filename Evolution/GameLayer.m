@@ -7,6 +7,7 @@
 //
 
 #import "GameLayer.h"
+#import "GameConfig.h"
 #import "Fish.h"
 #import "Man.h"
 
@@ -84,7 +85,8 @@
             CGFloat addTo = deltaTime * f.speed;
             if (f.position.x + addTo >= WIDTH + f.textureRect.size.width)
             {
-                [f setPosition:ccp(- f.textureRect.size.width + addTo, f.position.y)];
+                //[f setPosition:ccp(- f.textureRect.size.width + addTo, f.position.y)];
+                [f setUp];
             }
             else
             {
@@ -95,14 +97,18 @@
     
     for (Man *man in self.men)
     {
-        CGFloat addTo = deltaTime * man.speed;
-        if (man.position.x + addTo >= WIDTH + 100)
+        if (man.lost)
         {
-            [man setPosition:ccp(- 100 + addTo, man.position.y)];
-        }
-        else
-        {
-            [man setPosition:ccp(man.position.x + addTo, man.position.y)];
+            CGFloat addTo = deltaTime * man.speed;
+            if (man.position.x + addTo >= WIDTH + 100)
+            {
+                //[man setPosition:ccp(- 100 + addTo, man.position.y)];
+                [man setUp];
+            }
+            else
+            {
+                [man setPosition:ccp(man.position.x + addTo, man.position.y)];
+            }
         }
     }
 }
@@ -149,6 +155,7 @@ Fish *selectedFish;
 
     [f setScale:0.5];
     [f setUp];
+    [f setDelegate:self];
     [self addChild:f];
     
     [self.fishes addObject:f];
@@ -157,13 +164,32 @@ Fish *selectedFish;
 - (void) makeAMan
 {
     Man *man = [Man node];
-    [man setPosition:ccp((arc4random()%(int)WIDTH) - WIDTH
-                       , arc4random()%(int)(HEIGHT * 0.4) + (HEIGHT /2) )];
-    
-    man.speed = 100 + ((float)(arc4random()%100));
+    [man setUp];
     [self addChild:man];
     [self.men addObject:man];
 }
+
+#pragma mark - fish delegate
+
+- (void) fishDidLand:(Fish *)fish
+{
+    for (Man *man in self.men)
+    {
+        CGRect manBB = CGRectMake(man.boundingBox.origin.x
+                                  , man.boundingBox.origin.y
+                                  , 100
+                                  , 100);
+        if(CGRectIntersectsRect(manBB, [fish boundingBox]))
+        {
+            [man addedHead];
+            break;
+        }
+    }
+    
+    [fish setUp];
+}
+
+#pragma mark - memory man
 
 - (void) dealloc
 {
