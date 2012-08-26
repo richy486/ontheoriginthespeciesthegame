@@ -16,11 +16,12 @@
 
 @end
 
-@interface Fish : CCSprite
+@interface Fish : CCNode
 @property (assign) id<FishDelegate> delegate;
 @property CGFloat speed;
 @property BOOL fresh;
 
 - (void) setUp;
 - (void) fireFish:(float) power;
+- (void) explode;
 @end

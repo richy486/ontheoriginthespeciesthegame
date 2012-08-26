@@ -9,10 +9,32 @@
 #import "Fish.h"
 #import "GameConfig.h"
 
+@interface Fish()
+@property (nonatomic, retain) CCSprite *fishSprite;
+
+@end
+
 @implementation Fish
+
+- (id) init
+{
+    self = [super init];
+    if (self)
+    {
+        CCSprite *f = [CCSprite spriteWithFile:@"fish.png"];
+        
+        [f setScale:0.5];
+        [self addChild:f];
+        self.fishSprite = f;
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"explode.plist"];
+    }
+    return self;
+}
 
 - (void) setUp
 {
+    [self.fishSprite setVisible:YES];
     [self setPosition:ccp((arc4random()%(int)WIDTH) - WIDTH
                        , arc4random()%(int)(HEIGHT * 0.35))];
     self.speed = 100 + ((float)(arc4random()%100));
@@ -49,7 +71,47 @@
     }
     else
     {
-        [self setUp];
+        [self explode];
     }
+}
+
+- (void) explode
+{
+    [self.fishSprite setVisible:NO];
+    
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"explode.png"];
+    [self addChild:spriteSheet];
+    
+    NSMutableArray *walkAnimFrames = [NSMutableArray arrayWithCapacity:7];
+    for (int i = 0; i < 4; ++i)
+    {
+        NSString *name;
+        if( [[CCDirector sharedDirector] contentScaleFactor] >= 2)
+        {
+            name = [NSString stringWithFormat:@"explode%d-hd.png", i];
+        }
+        else
+        {
+            name = [NSString stringWithFormat:@"explode%d.png", i];
+        }
+        
+        CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: name];
+        [walkAnimFrames addObject: frame];
+    }
+    CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.05f];
+    
+    
+    __block CCSprite *walkSprite = [[CCDirector sharedDirector] contentScaleFactor] >= 2
+        ? [CCSprite spriteWithSpriteFrameName:@"explode0-hd.png"]
+        : [CCSprite spriteWithSpriteFrameName:@"explode0.png"];
+    
+    CCAnimate *walkAction = [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO];
+    CCCallBlock *actionRemoveSelf = [CCCallBlock actionWithBlock:^{
+        [walkSprite removeFromParentAndCleanup:YES];
+        [self setUp];
+    }];
+    
+    [walkSprite runAction:[CCSequence actions:walkAction, actionRemoveSelf, nil]];
+    [spriteSheet addChild:walkSprite];
 }
 @end

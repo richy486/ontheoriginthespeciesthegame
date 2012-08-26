@@ -98,7 +98,7 @@
         if (f.fresh)
         {
             CGFloat addTo = deltaTime * f.speed;
-            if (f.position.x + addTo >= WIDTH + f.textureRect.size.width)
+            if (f.position.x + addTo >= WIDTH + 50)
             {
                 //[f setPosition:ccp(- f.textureRect.size.width + addTo, f.position.y)];
                 [f setUp];
@@ -140,7 +140,11 @@ NSDate *touchDownDate;
     selectedFish = nil;
     for (Fish *fish in self.fishes)
     {
-        if (CGRectContainsPoint([fish boundingBox], startSwipePosition))
+        CGRect fishBB = CGRectMake(fish.position.x - 25
+                                   , fish.position.y - 25
+                                   , 50
+                                   , 50);
+        if (CGRectContainsPoint(fishBB, startSwipePosition))
         {
             //[fish setVisible:NO];
             selectedFish = fish;
@@ -175,9 +179,9 @@ NSDate *touchDownDate;
 
 - (void) makeAFish
 {
-    Fish *f = [Fish spriteWithFile:@"fish.png"];
+    Fish *f = [Fish node];
 
-    [f setScale:0.5];
+    //[f setScale:0.5];
     [f setUp];
     [f setDelegate:self];
     [self addChild:f];
@@ -217,22 +221,34 @@ NSDate *touchDownDate;
 
 - (void) fishDidLand:(Fish *)fish
 {
+    BOOL hit = NO;
     for (Man *man in self.men)
     {
         CGRect manBB = CGRectMake(man.position.x - 50
                                   , man.position.y
                                   , 100
                                   , 50);
-        if(CGRectIntersectsRect(manBB, [fish boundingBox]))
+        CGRect fishBB = CGRectMake(fish.position.x - 25
+                                   , fish.position.y - 25
+                                   , 50
+                                   , 50);
+        if(CGRectIntersectsRect(manBB, fishBB))
         {
+            hit = YES;
             [man addedHead];
             [self playBigText:@"+EVOLUTION!"];
             [self.score addToEveloutions];
+            [fish setUp];
             break;
         }
     }
     
-    [fish setUp];
+    if (!hit)
+    {
+        [fish explode];
+    }
+    
+    
 }
 
 #pragma mark - memory man

@@ -16,6 +16,10 @@
 		B9252C0915E9CC2300F6739F /* water-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0715E9CC2300F6739F /* water-hd.png */; };
 		B9252C0A15E9CC2300F6739F /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0815E9CC2300F6739F /* water.png */; };
 		B9252C0D15E9D3DF00F6739F /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252C0C15E9D3DF00F6739F /* Score.m */; };
+		B9252C1215EA378600F6739F /* explode-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0E15EA378600F6739F /* explode-hd.plist */; };
+		B9252C1315EA378600F6739F /* explode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C0F15EA378600F6739F /* explode-hd.png */; };
+		B9252C1415EA378600F6739F /* explode.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1015EA378600F6739F /* explode.plist */; };
+		B9252C1515EA378600F6739F /* explode.png in Resources */ = {isa = PBXBuildFile; fileRef = B9252C1115EA378600F6739F /* explode.png */; };
 		B9C652E5143E8FF1005F4D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E4143E8FF1005F4D1E /* UIKit.framework */; };
 		B9C652E7143E8FF1005F4D1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E6143E8FF1005F4D1E /* Foundation.framework */; };
 		B9C652E9143E8FF1005F4D1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C652E8143E8FF1005F4D1E /* CoreGraphics.framework */; };
@@ -136,6 +140,10 @@
 		B9252C0815E9CC2300F6739F /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 		B9252C0B15E9D3DE00F6739F /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		B9252C0C15E9D3DF00F6739F /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		B9252C0E15EA378600F6739F /* explode-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "explode-hd.plist"; sourceTree = "<group>"; };
+		B9252C0F15EA378600F6739F /* explode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explode-hd.png"; sourceTree = "<group>"; };
+		B9252C1015EA378600F6739F /* explode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explode.plist; sourceTree = "<group>"; };
+		B9252C1115EA378600F6739F /* explode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explode.png; sourceTree = "<group>"; };
 		B9C652E0143E8FF1005F4D1E /* Evolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C652E4143E8FF1005F4D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9C652E6143E8FF1005F4D1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -713,6 +721,10 @@
 		B9D84C3415E925EA000B53E5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B9252C0E15EA378600F6739F /* explode-hd.plist */,
+				B9252C0F15EA378600F6739F /* explode-hd.png */,
+				B9252C1015EA378600F6739F /* explode.plist */,
+				B9252C1115EA378600F6739F /* explode.png */,
 				B9D84C3715E92664000B53E5 /* fish.png */,
 				B9D84C3515E925EA000B53E5 /* fish-hd.png */,
 				B90A01F415E9A3930015B652 /* man.plist */,
@@ -785,6 +797,10 @@
 				B90A01F715E9A3940015B652 /* man.png in Resources */,
 				B9252C0915E9CC2300F6739F /* water-hd.png in Resources */,
 				B9252C0A15E9CC2300F6739F /* water.png in Resources */,
+				B9252C1215EA378600F6739F /* explode-hd.plist in Resources */,
+				B9252C1315EA378600F6739F /* explode-hd.png in Resources */,
+				B9252C1415EA378600F6739F /* explode.plist in Resources */,
+				B9252C1515EA378600F6739F /* explode.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
