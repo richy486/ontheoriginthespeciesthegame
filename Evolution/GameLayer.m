@@ -51,12 +51,15 @@
         CCLayerColor *layerColour = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255)];
         [self addChild:layerColour];
         
-        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Origin of the Species The Game " fontName:@"Helvetica" fontSize:24];
+        CCLabelTTF *title = [CCLabelTTF labelWithString:@"On the Origin the Species the Game" fontName:@"Helvetica" fontSize:24];
 		title.position = ccp(WIDTH /2 , HEIGHT - 70.0);
         title.color = (ccColor3B){64, 64, 64};
 		[self addChild: title];
         
-        [title runAction:[CCMoveTo actionWithDuration:2.0 position:ccp(WIDTH /2 , HEIGHT + 70.0)]];
+        CCMoveTo *moveTitle = [CCMoveTo actionWithDuration:2.0 position:ccp(WIDTH /2 , HEIGHT + 70.0)];
+        CCDelayTime *delayTitle = [CCDelayTime actionWithDuration:4.0];
+        
+        [title runAction:[CCSequence actions: delayTitle, moveTitle,  nil]];
         
         const int fishCount = 10;
         self.fishes = [NSMutableArray arrayWithCapacity:fishCount];
@@ -76,7 +79,13 @@
         [self addChild:water];
         
         self.score = [Score node];
-        self.score.position = ccp(WIDTH /2 , HEIGHT - 20.0);
+        self.score.position = ccp(WIDTH /2 , HEIGHT + 20.0);
+        
+        CCDelayTime *delayScore = [CCDelayTime actionWithDuration:5.0];
+        CCMoveTo *moveScore0 = [CCMoveTo actionWithDuration:0.5 position:ccp(WIDTH /2 , HEIGHT - 25.0)];
+        CCMoveTo *moveScore1 = [CCMoveTo actionWithDuration:0.2 position:ccp(WIDTH /2 , HEIGHT - 20.0)];
+        
+        [self.score runAction:[CCSequence actions:delayScore,moveScore0, moveScore1, nil]];
         [self addChild:self.score];
     }
     return self;
