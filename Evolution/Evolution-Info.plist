@@ -12,8 +12,6 @@
 	<array>
 		<string>Default@2x.png</string>
 		<string>Default.png</string>
-		<string>Default.png</string>
-		<string>Icon-hd.png</string>
 		<string>Icon.png</string>
 		<string>Icon@2x.png</string>
 	</array>
@@ -47,7 +45,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.13</string>
+	<string>1.0.14</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIPrerenderedIcon</key>
