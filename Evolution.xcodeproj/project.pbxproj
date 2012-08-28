@@ -1007,11 +1007,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Vorticity";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Evolution/Evolution-Prefix.pch";
 				INFOPLIST_FILE = "Evolution/Evolution-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Evolution;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "98EEE5F7-7E70-4348-B806-6169D3C63CEE";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
